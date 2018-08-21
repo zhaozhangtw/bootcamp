@@ -54,11 +54,11 @@ public class GameRuleTest {
   @Test
   public void testInputInvalidRangeSpecialNumber() {
     thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("special number 0 out of range");
+    thrown.expectMessage("special number 0 must be in range [1, 9]");
     new GameRule(0, 5, 7);
 
     thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("special number 10 number of range");
+    thrown.expectMessage("special number 10 must be in range [1, 9]");
     new GameRule(0, 10, 7);
   }
 

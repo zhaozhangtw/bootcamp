@@ -18,7 +18,7 @@ public class GameRule {
 
     specials.forEach(special -> {
       if (special < 1 || special > 9) {
-        throw new IllegalArgumentException("special number " + special + " out of range");
+        throw new IllegalArgumentException("special number " + special + " must be in range [1, 9]");
       }
     });
 
