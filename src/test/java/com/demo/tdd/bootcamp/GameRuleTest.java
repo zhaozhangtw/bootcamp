@@ -2,9 +2,14 @@ package com.demo.tdd.bootcamp;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class GameRuleTest {
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testCountOffNormalNumber() {
@@ -44,5 +49,16 @@ public class GameRuleTest {
 
     assertEquals("Fizz", gameRule.countOff(13));
     assertEquals("Fizz", gameRule.countOff(35));
+  }
+
+  @Test
+  public void testInputInvalidRangeSpecialNumber() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("special number 0 out of range");
+    new GameRule(0, 5, 7);
+
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("special number 10 number of range");
+    new GameRule(0, 10, 7);
   }
 }

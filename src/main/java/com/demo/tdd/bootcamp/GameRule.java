@@ -13,6 +13,12 @@ public class GameRule {
     specials.add(firstSpecial);
     specials.add(secondSpecial);
     specials.add(thirdSpecial);
+
+    specials.forEach(special -> {
+      if (special < 1 || special > 9) {
+        throw new IllegalArgumentException("special number " + special + " out of range");
+      }
+    });
   }
 
   public String countOff(int count) {
