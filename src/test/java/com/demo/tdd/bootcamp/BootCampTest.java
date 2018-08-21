@@ -37,4 +37,12 @@ public class BootCampTest {
     assertEquals("FizzWhizz", bootCamp.countOff(3 * 7));
     assertEquals("FizzBuzzWhizz", bootCamp.countOff(3 * 5 * 7));
   }
+
+  @Test
+  public void testCountOffIncludeSpecialNumber() {
+    BootCamp bootCamp = new BootCamp(3, 5, 7);
+
+    assertEquals("Fizz", bootCamp.countOff(13));
+    assertEquals("Fizz", bootCamp.countOff(35));
+  }
 }
