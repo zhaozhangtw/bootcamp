@@ -16,12 +16,16 @@ public class BootCamp {
   }
 
   public String countOff(int count) {
+    StringBuilder result = new StringBuilder();
+
     for (int i = 0; i < specials.size(); i++) {
       if (count % specials.get(i) == 0) {
-        return specialFlag[i];
+        result.append(specialFlag[i]);
       }
     }
 
-    return count + "";
+    return result.length() != 0
+        ? result.toString()
+        : count + "";
   }
 }

@@ -28,4 +28,13 @@ public class BootCampTest {
     assertEquals("Buzz", bootCamp.countOff(25));
     assertEquals("Whizz", bootCamp.countOff(28));
   }
+
+  @Test
+  public void testCountOffTimesOfMultipleSpecialNumber() {
+    BootCamp bootCamp = new BootCamp(3, 5, 7);
+
+    assertEquals("FizzBuzz", bootCamp.countOff(3 * 5));
+    assertEquals("FizzWhizz", bootCamp.countOff(3 * 7));
+    assertEquals("FizzBuzzWhizz", bootCamp.countOff(3 * 5 * 7));
+  }
 }
