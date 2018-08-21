@@ -3,13 +3,13 @@ package com.demo.tdd.bootcamp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BootCamp {
+public class GameRule {
 
   private static final String[] specialFlag = new String[]{"Fizz", "Buzz", "Whizz"};
 
   private List<Integer> specials = new ArrayList<>();
 
-  public BootCamp(int firstSpecial, int secondSpecial, int thirdSpecial) {
+  public GameRule(int firstSpecial, int secondSpecial, int thirdSpecial) {
     specials.add(firstSpecial);
     specials.add(secondSpecial);
     specials.add(thirdSpecial);
