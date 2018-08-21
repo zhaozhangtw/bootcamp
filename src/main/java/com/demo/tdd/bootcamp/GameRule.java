@@ -1,7 +1,9 @@
 package com.demo.tdd.bootcamp;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GameRule {
 
@@ -19,6 +21,11 @@ public class GameRule {
         throw new IllegalArgumentException("special number " + special + " out of range");
       }
     });
+
+    Set<Integer> set = new HashSet<>(specials);
+    if (set.size() != specials.size()) {
+      throw new IllegalArgumentException("special number must be different each other");
+    }
   }
 
   public String countOff(int count) {

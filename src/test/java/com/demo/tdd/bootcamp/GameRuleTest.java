@@ -61,4 +61,11 @@ public class GameRuleTest {
     thrown.expectMessage("special number 10 number of range");
     new GameRule(0, 10, 7);
   }
+
+  @Test
+  public void testSameSpecialNumber() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("special number must be different each other");
+    new GameRule(3, 3, 7);
+  }
 }
