@@ -2,12 +2,14 @@ package com.demo.tdd.bootcamp;
 
 public class BootCamp {
 
-  public BootCamp(int firstSpecial) {
+  private final int firstSpecial;
 
+  public BootCamp(int firstSpecial) {
+    this.firstSpecial = firstSpecial;
   }
 
   public String countOff(int count) {
-    if (count % 3 == 0) {
+    if (count % firstSpecial == 0) {
       return "Fizz";
     }
 
