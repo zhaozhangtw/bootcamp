@@ -1,26 +1,25 @@
 package com.demo.tdd.bootcamp;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BootCamp {
 
-  private final int firstSpecial;
-  private final int secondSpecial;
-  private final int thirdSpecial;
+  private static final String[] specialFlag = new String[]{"Fizz", "Buzz", "Whizz"};
+
+  private List<Integer> specials = new ArrayList<>();
 
   public BootCamp(int firstSpecial, int secondSpecial, int thirdSpecial) {
-    this.firstSpecial = firstSpecial;
-    this.secondSpecial = secondSpecial;
-    this.thirdSpecial = thirdSpecial;
+    specials.add(firstSpecial);
+    specials.add(secondSpecial);
+    specials.add(thirdSpecial);
   }
 
   public String countOff(int count) {
-    if (count % firstSpecial == 0) {
-      return "Fizz";
-    }
-    if (count % secondSpecial == 0) {
-      return "Buzz";
-    }
-    if (count % thirdSpecial == 0) {
-      return "Whizz";
+    for (int i = 0; i < specials.size(); i++) {
+      if (count % specials.get(i) == 0) {
+        return specialFlag[i];
+      }
     }
 
     return count + "";
